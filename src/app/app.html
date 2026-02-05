@@ -1,0 +1,19 @@
+<main class="min-h-screen bg-base-100 text-base-content">
+  <header class="border-b border-base-300 bg-base-100/80 backdrop-blur">
+    <div class="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
+      <div class="text-sm font-semibold">Angular Tailwind DaisyUI Template</div>
+      <label class="flex items-center gap-3 text-sm">
+        <app-icon [name]="themeService.theme() === 'dark' ? 'moon' : 'sun'" [size]="18" />
+        <input
+          type="checkbox"
+          class="toggle toggle-primary"
+          [checked]="themeService.theme() === 'dark'"
+          (change)="themeService.toggleTheme()"
+          aria-label="Toggle theme"
+        />
+      </label>
+    </div>
+  </header>
+
+  <router-outlet />
+</main>
